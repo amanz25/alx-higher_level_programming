@@ -64,8 +64,8 @@ void print_python_bytes(PyObject *p)
 	index = 0;
 	while (index < size)
 	{
-		printf("%02hhx", bytes->ob_sval[i]);
-		if (i == (size - 1))
+		printf("%02hhx", bytes->ob_sval[index]);
+		if (index == (size - 1))
 			printf("\n");
 		else
 			printf(" ");
