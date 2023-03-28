@@ -7,7 +7,7 @@ class Square:
 
     def __init__(self, size=0):
         """set the values to be passed on the obj to the class"""
-        self.__size = size
+        self.size = size
 
     def area(self):
         """square of the size"""
