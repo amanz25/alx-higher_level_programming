@@ -5,7 +5,7 @@
 class Square:
     """initalization/constructor while instance of clss"""
 
-    def __init__(self, size):
+    def __init__(self, size=0):
         """check the type and set the values of class intance variable"""
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
