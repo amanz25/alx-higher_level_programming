@@ -11,7 +11,7 @@ class Rectangle:
         """Instantiates width and height/ constructor """
         self.width = width
         self.height = height
-        self.instance++
+        type(self).instance += 1
 
     @property
     def width(self):
@@ -71,7 +71,7 @@ class Rectangle:
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
     @staticmethod
-    def __del__():
+    def __del__(ins):
         """ print message added while an instance deletion """
-        instance--
+        ins.instance -= 1
         print("Bye rectangle...")
