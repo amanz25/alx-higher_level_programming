@@ -5,13 +5,13 @@
 class Rectangle:
     """  Class Rectangle    """
 
-    instance = 0
+    instance_count = 0
 
     def __init__(self, width=0, height=0):
         """Instantiates width and height/ constructor """
+        type(self).instance_count += 1
         self.width = width
         self.height = height
-        type(self).instance += 1
 
     @property
     def width(self):
@@ -73,5 +73,5 @@ class Rectangle:
     @staticmethod
     def __del__(ins):
         """ print message added while an instance deletion """
-        ins.instance -= 1
+        ins.instance_count -= 1
         print("Bye rectangle...")
