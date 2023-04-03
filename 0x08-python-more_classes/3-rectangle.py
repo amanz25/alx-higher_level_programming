@@ -51,12 +51,13 @@ class Rectangle:
 
     def _print_rectangle(self):
         """ print the rectangle """
+        s = ""
         for r in range(self.__height):
             for c in range(self.__width):
-                str += '#'
+                s += '#'
             if self.__width != 0 and r < (self.__height - 1):
-                str += '\n'
-        return str
+                s += '\n'
+        return s
 
     def __str__(self):
         """ override str function """
