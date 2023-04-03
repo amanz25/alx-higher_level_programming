@@ -53,7 +53,7 @@ class Rectangle:
         """ print the rectangle """
         for r in range(self.__height):
             for c in range(self.__width):
-                str += '*'
+                str += '#'
             if self.__width != 0 and r < (self.__height - 1):
                 str += '\n'
         return str
