@@ -67,6 +67,7 @@ class Rectangle:
         """ recreate a new instance by using eval """
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
+    @staticmethod
     def __del__():
         """ print message added while an instance deletion """
         print("Bye rectangle...")
