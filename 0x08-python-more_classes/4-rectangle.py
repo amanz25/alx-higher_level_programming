@@ -48,3 +48,21 @@ class Rectangle:
             return 0
         else:
             return (2 * (self.__height + self.__width))
+
+    def _print_rectangle(self):
+        """ print the rectangle """
+        s = ""
+        for r in range(self.__height):
+            for c in range(self.__width):
+                s += '#'
+            if self.__width != 0 and r < (self.__height - 1):
+                s += '\n'
+        return s
+
+    def __str__(self):
+        """ override str function """
+        return self._print_rectangle()
+
+    def __repr__(self):
+        """ recreate a new instance by using eval """
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
