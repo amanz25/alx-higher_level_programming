@@ -70,7 +70,7 @@ class Rectangle:
         """ recreate a new instance by using eval """
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
-    @staticmethod
+    @classmethod
     def __del__(ins):
         """ print message added while an instance deletion """
         ins.number_of_instances -= 1
