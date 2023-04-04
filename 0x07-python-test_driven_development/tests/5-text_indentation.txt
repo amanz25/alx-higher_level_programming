@@ -1,0 +1,19 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+success criteria
+>>> text_indentation("Hi . what are you doing? she said: I am studying maths.")
+Hi .
+<BLANKLINE>
+what are you doing?
+<BLANKLINE>
+she said:
+<BLANKLINE>
+I am studying maths.
+<BLANKLINE>
+>>> text_indentation("test")
+test
+
+error criteria
+>>> text_indentation(0)
+Traceback (most recent call last):
+TypeError: text must be a string
