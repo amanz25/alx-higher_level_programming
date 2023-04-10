@@ -4,9 +4,9 @@
 
 class MyInt(int):
     """ create MyInt class """
-    def __new__(cls, *args, **karg):
+    def __new__(cls, *args, **kwargs):
         """ create instance """
-        return super(MyInt, cls).__new__(cls, *args, **karg)
+        return super(MyInt, cls).__new__(cls, *args, **kwargs)
 
     def __eq__(self, other):
         """ equal method """
