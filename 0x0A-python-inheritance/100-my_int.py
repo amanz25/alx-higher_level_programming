@@ -14,4 +14,4 @@ class MyInt(int):
 
     def __ne__(self, other):
         """ not equal """
-        retrun other == self.num
+        return other == self.num
