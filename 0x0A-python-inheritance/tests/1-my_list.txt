@@ -1,0 +1,24 @@
+>>>MyList = __import__('1-my_list').MyList
+
+>>> listObj = MyList()
+>>> listobj.print_sorted()
+[]
+
+>>> listObj.append(10)
+>>> listObj.append(5)
+>>> listObj.append(15)
+>>> listObj.append(1)
+>>> listObj.append(8)
+>>> print(listObj)
+[10,5,15,1,8]
+>>> listobj.print_sorted()
+[1,5,8,10,15]
+
+>>> listObj.append(-1)
+>>> listObj.append(0)
+>>> listobj.print_sorted()
+[-1,0,1,5,8,10,15]
+
+>>> listobj.print_sorted(listobj,listobj)
+Traceback (most recent call last):
+TypeError: print_sorted() takes 1 positional argument but 3 were given
