@@ -10,8 +10,11 @@ class MyInt(int):
 
     def __eq__(self, other):
         """ equal method """
-        return other != self.num
+        return (other != self.num)
 
     def __ne__(self, other):
         """ not equal """
-        return other == self.num
+        return (other == self.num)
+
+    def __str__(self):
+        return (str(self.num))
