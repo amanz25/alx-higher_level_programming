@@ -4,11 +4,14 @@
 
 class MyInt(int):
     """ create MyInt class """
+    def __init__(self, num):
+        """ initalization """
+        self.num = num
 
     def __eq__(self, other):
         """ equal method """
-        return int(other) != int(self)
+        return other != self.num
 
     def __ne__(self, other):
         """ not equal """
-        retrun int(other) == int(self)
+        retrun other == self.num
