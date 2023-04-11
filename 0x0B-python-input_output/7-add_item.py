@@ -10,5 +10,5 @@ if __name__ == "__main__":
     except FileNotFoundError:
         val = []
     val.extend(sys.argv[1:])
-    __import__('5-save_to_json_file')
-    .save_to_json_file(items, "add_item.json")
+    __import__('5-save_to_json_file')\
+    .save_to_json_file(val, "add_item.json")
