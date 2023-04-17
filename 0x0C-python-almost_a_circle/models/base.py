@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 """base py"""
 
+
 class Base:
     """define a base class"""
     __nb_objects = 0
+
     def __init__(self, id=None):
         """define constructor"""
         if id is not None:
