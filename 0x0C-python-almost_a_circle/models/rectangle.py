@@ -61,4 +61,10 @@ class Rectangle(Base):
             raise ValueError("{} must be > 0".format(attribute))
 
     def area(self):
-        return self.__width * self.__height
+        return self.width * self.height
+
+    def display(self):
+        rectangle = ""
+        for e in range(self.height):
+            rectangle += (" " * self.x) + ("#" * self.width) + "\n"
+        print(rectangle, end="")
