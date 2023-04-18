@@ -54,3 +54,20 @@ class Base:
             r2 = Rectangle(3, 8)
         r2.update(**dictionary)
         return (r2)
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+        instance = []
+
+        try:
+            with open((cls.__name__ + ".json"), encoding="UTF8") as f:
+                data = cls.from_json_string(f.read())
+        except Exception:
+            return []
+
+        for i in data:
+            val = cls.create(**data)
+            instance.append(val)
+
+        return instance
