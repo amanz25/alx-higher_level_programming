@@ -78,14 +78,17 @@ class Base:
         """encode a list of Rectangles/Squares in csv"""
         filename = cls.__name__ + ".csv"
         with open(filename, 'w', newline='') as csvfile:
-            csv_writer = csv.writer(csvfile)
-            if cls.__name__ == "Rectangle":
-                for obj in list_objs:
-                    csv_writer.writerow([obj.id, obj.width, obj.height,
-                                         obj.x, obj.y])
-            elif cls.__name__ == "Square":
-                for obj in list_objs:
-                    csv_writer.writerow([obj.id, obj.size, obj.x, obj.y])
+            if list_objs is None or list_objs == []:
+                csvfile.write("[]")
+            else:
+                csv_writer = csv.writer(csvfile)
+                if cls.__name__ == "Rectangle":
+                    for obj in list_objs:
+                        csv_writer.writerow([obj.id, obj.width, obj.height,
+                                             obj.x, obj.y])
+                elif cls.__name__ == "Square":
+                    for obj in list_objs:
+                        csv_writer.writerow([obj.id, obj.size, obj.x, obj.y])
 
     @classmethod
     def load_from_file_csv(cls):
