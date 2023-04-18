@@ -67,7 +67,7 @@ class Base:
             return []
 
         for i in data:
-            val = cls.create(**data)
+            val = cls.create(**i)
             instance.append(val)
 
         return instance
