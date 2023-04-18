@@ -75,7 +75,7 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """serializes a list of Rectangles/Squares in csv"""
+        """encode a list of Rectangles/Squares in csv"""
         filename = cls.__name__ + ".csv"
         with open(filename, 'w', newline='') as csvfile:
             csv_writer = csv.writer(csvfile)
@@ -89,7 +89,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        """deserializes a list of Rectangles/Squares in csv"""
+        """decode  a list of Rectangles/Squares in csv"""
         filename = cls.__name__ + ".csv"
         lst = []
         try:
@@ -110,3 +110,49 @@ class Base:
         except Exception:
             pass
         return lst
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ddraw rectangle and square"""
+        import turtle
+
+        turtle.penup()
+        turtle.pensize(10)
+        turtle.bgcolor("black")
+        turtle.color("teal")
+        turtle.hideturtle()
+        turtle.goto(-300, 300)
+        turtle.speed(0)
+
+        for instance in list_rectangles:
+            turtle.pendown()
+            for i in range(2):
+                turtle.forward(instance.width)
+                turtle.right(90)
+                turtle.forward(instance.height)
+                turtle.right(90)
+            turtle.penup()
+            if instance.width < 100:
+                move_by = 200
+            else:
+                move_by = instance.width + 30
+            x_cordinate = round(turtle.xcor(), 5)
+            turtle.goto(x_cordinate + move_by, 300)
+
+        turtle.goto(-300, 100)
+        for instance in list_squares:
+            turtle.pendown()
+            for i in range(2):
+                turtle.forward(instance.width)
+                turtle.right(90)
+                turtle.forward(instance.height)
+                turtle.right(90)
+            turtle.penup()
+            if instance.width < 100:
+                move_by = 100
+            else:
+                move_by = instance.width + 30
+            x_cordinate = round(turtle.xcor(), 5)
+            turtle.goto(x_cordinate + move_by, 100)
+
+        turtle.exitonclick()
