@@ -15,37 +15,45 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """return width"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """set width"""
         self.validate("width", value)
         self.__width = value
 
     @property
     def height(self):
+        """return height"""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """set height value"""
         self.validate("height", value)
         self.__height = value
 
     @property
     def x(self):
+        """return x value"""
         return self.__x
 
     @x.setter
     def x(self, value):
+        """set x value"""
         self.validate("x", value)
         self.__x = value
 
     @property
     def y(self):
+        """return y value"""
         return self.__y
 
     @y.setter
     def y(self, value):
+        """set y value"""
         self.validate("y", value)
         self.__y = value
 
@@ -61,9 +69,11 @@ class Rectangle(Base):
             raise ValueError("{} must be > 0".format(attribute))
 
     def area(self):
+        """area of a rectangle"""
         return self.__width * self.__height
 
     def display(self):
+        """display rectangle"""
         rectangle = ""
         print("\n" * self.y, end="")
         for e in range(self.height):
@@ -71,10 +81,12 @@ class Rectangle(Base):
         print(rectangle, end="")
 
     def __str__(self):
+        """override the str method"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
                                                        self.width, self.height)
 
     def update(self, *args, **kwargs):
+        """update the rectangle"""
         if len(args) == 0:
             for key, val in kwargs.items():
                 self.__setattr__(key, val)
