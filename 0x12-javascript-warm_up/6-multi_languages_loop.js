@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const sentences = ['C is fun', 'Python is cool', 'Javascript is amazing'];
-for (const sentence of sentences) {
-  console.log(sentence);
+const complements = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
+for (const complement of complements) {
+  console.log(complement);
 }
