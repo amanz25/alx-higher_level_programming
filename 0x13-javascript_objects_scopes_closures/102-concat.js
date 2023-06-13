@@ -1,5 +1,8 @@
 #!/usr/bin/node
-const files = require('files');
-const file1 = files.readFileSync(process.argv[2], 'utf8');
-const file2 = files.readFileSync(process.argv[3], 'utf8');
-files.writeFileSync(process.argv[4], file1 + file2);
+const fs = require('fs');
+
+const [, , sourceFile1, sourceFile2, destination] = process.argv;
+const data1 = fs.readFileSync(sourceFile1);
+const data2 = fs.readFileSync(sourceFile2);
+const concatenatedData = Buffer.concat([data1, data2]);
+fs.writeFileSync(destination, concatenatedData);
